@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
 import { initializeFirebaseApp } from './lib/firebase/firebase';
-import { getApp } from 'firebase/app';
+import { AuthProvider } from './feature/auth/provider/AuthProvider';
+import { Header } from './components/Header';
 
 initializeFirebaseApp();
 const root = ReactDOM.createRoot(
@@ -14,7 +15,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ChakraProvider>
-      <App />
+      <AuthProvider>
+        <Header />
+        <App />
+      </AuthProvider>
     </ChakraProvider>
   </React.StrictMode>
 );
