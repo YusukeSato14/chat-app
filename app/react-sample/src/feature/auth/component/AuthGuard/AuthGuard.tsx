@@ -15,7 +15,7 @@ export const AuthGuard = ({ children }: Props) => {
   }
 
   if (user === null) {
-    return <Navigate to='signin' fromCurrent={true} replace={true} />
+    return <Navigate to='signin' replace={true} />
   }
 
   return <>{children}</>

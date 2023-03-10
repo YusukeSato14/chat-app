@@ -1,4 +1,5 @@
 import { Container, chakra, Heading, Spacer, Box, Grid, FormControl, FormLabel, Input, Center, Button, useToast } from "@chakra-ui/react";
+import { useNavigate } from "@tanstack/react-location";
 import { FirebaseError } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { FormEvent, useState } from "react";
@@ -8,7 +9,8 @@ export const Signin = () => {
   const [password, setPassword] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const toast = useToast();
-  
+  const navigate = useNavigate();
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
     e.preventDefault();
@@ -22,6 +24,7 @@ export const Signin = () => {
         status: 'success',
         position: 'top',
       });
+      navigate({to: '/', replace: true});
     } catch (e) {
       toast({
         title: 'エラーが発生しました。',

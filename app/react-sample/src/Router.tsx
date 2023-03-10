@@ -1,5 +1,5 @@
 import { ReactLocation, Route } from "@tanstack/react-location";
-import Home from "./components/Home";
+import Chat from "./components/Chat";
 import Signin from "./components/Signin";
 import Signup from './components/Signup';
 
@@ -8,7 +8,7 @@ export const location = new ReactLocation();
 export const routes: Route[] = [
   {
     path: '/',
-    element: <Home />
+    element: <Chat />
   },
   {
     path: 'signup',
