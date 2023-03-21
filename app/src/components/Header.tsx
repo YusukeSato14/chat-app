@@ -40,7 +40,7 @@ export const Header = () => {
               サインアウト
             </Button>
           ) : (
-            'ログアウト中'
+            '読み込み中'
           )}
         </Heading>
       </Container>
